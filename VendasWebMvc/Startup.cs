@@ -37,7 +37,12 @@ namespace VendasWebMvc
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<VendasWebMvcContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("VendasWebMvcContext")));
+                    // Esse código foi usado para usar o banco de dados Msql --Substituir pelo código que estava antes
+                    // Importante colocar o mesmo nome que está na classe "Context" do projeto, nome caso a classe context é
+                    // "VendasWebMvcContext".
+                    //Também é importante colocar o nome do projeto dentro do " MigractionsAssembly( nome do projeto aqui com "")
+                    options.UseMySql(Configuration.GetConnectionString("VendasWebMvcContext"), 
+                    builder => builder.MigrationsAssembly("VendasWebMvc")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
