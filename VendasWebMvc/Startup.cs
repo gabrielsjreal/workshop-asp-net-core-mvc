@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using VendasWebMvc.Models;
 using VendasWebMvc.Data;
+using VendasWebMvc.Services;
 
 namespace VendasWebMvc
 {
@@ -47,6 +48,8 @@ namespace VendasWebMvc
 
             // caminho para a classe de povoamento do banco de dados - Independente do Migration
             services.AddScoped<PovoarDB>();
+            // o comando abaixo serve para permitir que o serviço possa ser injetado em outras classe
+            services.AddScoped<ServiceVendedor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
