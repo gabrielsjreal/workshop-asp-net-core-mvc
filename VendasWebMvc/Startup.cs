@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using VendasWebMvc.Models;
+using VendasWebMvc.Data;
 
 namespace VendasWebMvc
 {
@@ -43,14 +44,19 @@ namespace VendasWebMvc
                     //Também é importante colocar o nome do projeto dentro do " MigractionsAssembly( nome do projeto aqui com "")
                     options.UseMySql(Configuration.GetConnectionString("VendasWebMvcContext"), 
                     builder => builder.MigrationsAssembly("VendasWebMvc")));
+
+            // caminho para a classe de povoamento do banco de dados - Independente do Migration
+            services.AddScoped<PovoarDB>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, PovoarDB povoar)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                // comando adiconado para povoar a base de dados
+                povoar.Enviar();
             }
             else
             {
