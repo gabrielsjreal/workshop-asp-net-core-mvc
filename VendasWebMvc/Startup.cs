@@ -50,6 +50,7 @@ namespace VendasWebMvc
             services.AddScoped<PovoarDB>();
             // o comando abaixo serve para permitir que o serviço possa ser injetado em outras classe
             services.AddScoped<ServiceVendedor>();
+            services.AddScoped<ServiceDepartamento>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
