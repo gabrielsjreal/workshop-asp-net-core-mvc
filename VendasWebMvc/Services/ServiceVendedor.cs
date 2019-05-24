@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using VendasWebMvc.Services.Exceptions;
 
 namespace VendasWebMvc.Services
 {
@@ -45,6 +46,22 @@ namespace VendasWebMvc.Services
             _context.SaveChanges();
         }
 
-       
+       public void Update(Vendedor obj)
+        {
+            // a exclamação na frente da condição quer dizer que "Se a condição NÃO FOR VERDADEIRA"
+            if(!_context.Vendedor.Any(vendedor => vendedor.Id == obj.Id))
+            {
+                throw new NotFoundException("Id não Encontrado");
+            }
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch (DbConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
+        }
     }
 }
