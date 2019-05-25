@@ -5,8 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VendasWebMvc.Models;
 using System.Diagnostics;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+
 using Microsoft.EntityFrameworkCore;
 using VendasWebMvc.Services.Exceptions;
 

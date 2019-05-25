@@ -37,20 +37,20 @@ namespace VendasWebMvc.Data
             Vendedor v5 = new Vendedor(5, "Marcos", "marcos@teste.com", new DateTime(1994, 05, 31), 1400.0, d1);
             Vendedor v6 = new Vendedor(6, "Paulo", "paulo@teste.com", new DateTime(1995, 01, 20), 1500.0, d2);
 
-            HistoricoDeVendas h1 = new HistoricoDeVendas(1, new DateTime(2019, 05, 20), 11000.0, StatusDaVenda.Vendido, v1);
-            HistoricoDeVendas h2 = new HistoricoDeVendas(2, new DateTime(2019, 06, 21), 11000.0, StatusDaVenda.Vendido, v2);
-            HistoricoDeVendas h3 = new HistoricoDeVendas(3, new DateTime(2019, 07, 22), 11000.0, StatusDaVenda.Vendido, v3);
-            HistoricoDeVendas h4 = new HistoricoDeVendas(4, new DateTime(2019, 08, 23), 11000.0, StatusDaVenda.Vendido, v4);
-            HistoricoDeVendas h5 = new HistoricoDeVendas(5, new DateTime(2019, 09, 24), 11000.0, StatusDaVenda.Vendido, v5);
-            HistoricoDeVendas h6 = new HistoricoDeVendas(6, new DateTime(2019, 10, 25), 11000.0, StatusDaVenda.Vendido, v6);
-            HistoricoDeVendas h7 = new HistoricoDeVendas(7, new DateTime(2019, 11, 26), 11000.0, StatusDaVenda.Vendido, v1);
-            HistoricoDeVendas h8 = new HistoricoDeVendas(8, new DateTime(2019, 12, 27), 11000.0, StatusDaVenda.Vendido, v2);
-            HistoricoDeVendas h9 = new HistoricoDeVendas(9, new DateTime(2019, 01, 28), 11000.0, StatusDaVenda.Vendido, v3);
-            HistoricoDeVendas h10 = new HistoricoDeVendas(10, new DateTime(2019, 02, 28), 11000.0, StatusDaVenda.Vendido, v4);
-            HistoricoDeVendas h11 = new HistoricoDeVendas(11, new DateTime(2019, 03, 30), 11000.0, StatusDaVenda.Vendido, v5);
-            HistoricoDeVendas h12 = new HistoricoDeVendas(12, new DateTime(2019, 04, 11), 11000.0, StatusDaVenda.Vendido, v6);
-            HistoricoDeVendas h13 = new HistoricoDeVendas(13, new DateTime(2019, 05, 01), 11000.0, StatusDaVenda.Vendido, v1);
-            HistoricoDeVendas h14 = new HistoricoDeVendas(14, new DateTime(2019, 06, 02), 11000.0, StatusDaVenda.Vendido, v2);
+            HistoricoDeVenda h1 = new HistoricoDeVenda(1, new DateTime(2019, 05, 20), 11000.0, StatusDaVenda.Vendido, v1);
+            HistoricoDeVenda h2 = new HistoricoDeVenda(2, new DateTime(2019, 06, 21), 11000.0, StatusDaVenda.Pendente, v2);
+            HistoricoDeVenda h3 = new HistoricoDeVenda(3, new DateTime(2019, 07, 22), 11000.0, StatusDaVenda.Vendido, v3);
+            HistoricoDeVenda h4 = new HistoricoDeVenda(4, new DateTime(2019, 08, 23), 11000.0, StatusDaVenda.Pendente, v4);
+            HistoricoDeVenda h5 = new HistoricoDeVenda(5, new DateTime(2019, 09, 24), 11000.0, StatusDaVenda.Vendido, v5);
+            HistoricoDeVenda h6 = new HistoricoDeVenda(6, new DateTime(2019, 10, 25), 11000.0, StatusDaVenda.Pendente, v6);
+            HistoricoDeVenda h7 = new HistoricoDeVenda(7, new DateTime(2019, 11, 26), 11000.0, StatusDaVenda.Vendido, v1);
+            HistoricoDeVenda h8 = new HistoricoDeVenda(8, new DateTime(2019, 12, 27), 11000.0, StatusDaVenda.Pendente, v2);
+            HistoricoDeVenda h9 = new HistoricoDeVenda(9, new DateTime(2019, 01, 28), 11000.0, StatusDaVenda.Vendido, v3);
+            HistoricoDeVenda h10 = new HistoricoDeVenda(10, new DateTime(2019, 02, 28), 11000.0, StatusDaVenda.Cancelado, v4);
+            HistoricoDeVenda h11 = new HistoricoDeVenda(11, new DateTime(2019, 03, 30), 11000.0, StatusDaVenda.Vendido, v5);
+            HistoricoDeVenda h12 = new HistoricoDeVenda(12, new DateTime(2019, 04, 11), 11000.0, StatusDaVenda.Cancelado, v6);
+            HistoricoDeVenda h13 = new HistoricoDeVenda(13, new DateTime(2019, 05, 01), 11000.0, StatusDaVenda.Vendido, v1);
+            HistoricoDeVenda h14 = new HistoricoDeVenda(14, new DateTime(2019, 06, 02), 11000.0, StatusDaVenda.Cancelado, v2);
 
             _context.Departamento.AddRange(d1,d2,d3,d4);
             _context.Vendedor.AddRange(v1, v2, v3, v4, v5, v6);

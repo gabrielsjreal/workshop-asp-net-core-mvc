@@ -17,6 +17,6 @@ namespace VendasWebMvc.Models
         // toda ver que criar um novo model, é importante fazer um Dbset aqui para referenciar o model com o banco
         public DbSet<Departamento> Departamento { get; set; }
         public DbSet<Vendedor> Vendedor { get; set; }
-        public DbSet<HistoricoDeVendas> HistoricoDeVendas { get; set; }
+        public DbSet<HistoricoDeVenda> HistoricoDeVendas { get; set; }
     }
 }

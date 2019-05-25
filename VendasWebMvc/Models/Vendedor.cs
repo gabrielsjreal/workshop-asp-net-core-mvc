@@ -42,7 +42,7 @@ namespace VendasWebMvc.Models
         public Departamento Departamento { get; set; }
         public int DepartamentoId { get; set; }
 
-        public ICollection<HistoricoDeVendas> VendasRealizadas { get; set; } = new List<HistoricoDeVendas>();
+        public ICollection<HistoricoDeVenda> VendasRealizadas { get; set; } = new List<HistoricoDeVenda>();
 
         public Vendedor()
         {
@@ -58,19 +58,19 @@ namespace VendasWebMvc.Models
             Departamento = departamento;
         }
 
-        public void adicionarVenda(HistoricoDeVendas venda)
+        public void adicionarVenda(HistoricoDeVenda venda)
         {
             VendasRealizadas.Add(venda);
         }
 
-        public void removerVenda(HistoricoDeVendas venda)
+        public void removerVenda(HistoricoDeVenda venda)
         {
             VendasRealizadas.Remove(venda);
         }
 
         public double totalDeVendas(DateTime dataInicial, DateTime dataFinal)
         {
-            return this.VendasRealizadas.Where(hv => hv.Data == dataInicial && hv.Data == dataFinal)
+            return this.VendasRealizadas.Where(hv => hv.Data >= dataInicial && hv.Data <= dataFinal)
                 .Sum(hv => hv.Valor);
         
         }

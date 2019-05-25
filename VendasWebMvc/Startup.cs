@@ -53,6 +53,9 @@ namespace VendasWebMvc
             // o comando abaixo serve para permitir que o serviço possa ser injetado em outras classe
             services.AddScoped<ServiceVendedor>();
             services.AddScoped<ServiceDepartamento>();
+
+            //Comando para add o Serviço do Histórico de Vendas
+            services.AddScoped<ServiceHistoricoDeVendas>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,63 @@
+﻿
+
+@model IEnumerable<VendasWebMvc.Models.HistoricoDeVenda>
+
+@{
+    ViewData["Title"] = "PesquisaVendedor";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="panel-body">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr class="success">
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Data)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vendedor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vendedor.Departamento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Valor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Data)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vendedor.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vendedor.Departamento.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Valor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
