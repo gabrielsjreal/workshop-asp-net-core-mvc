@@ -40,6 +40,10 @@ namespace VendasWebMvc.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Vendedor vendedor)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(vendedor);
+            }
             _serviceVendedor.Insert(vendedor);
             return RedirectToAction(nameof(Index));
         }
@@ -109,7 +113,12 @@ namespace VendasWebMvc.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, Vendedor vendedor)
         {
-            if(id != vendedor.Id)
+            if (!ModelState.IsValid)
+            {
+                return View(vendedor);
+            }
+
+            if (id != vendedor.Id)
             {
                 return RedirectToAction(nameof(Error), new { messagem = "Id não diferente" });            }
             try

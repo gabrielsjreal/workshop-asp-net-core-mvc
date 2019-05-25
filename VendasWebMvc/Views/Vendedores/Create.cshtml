@@ -1,15 +1,18 @@
 ﻿@model VendasWebMvc.Models.ViewModels.SellerFormViewModel
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastrar Vendedor";
 }
 
-<h2>Create</h2>
+<h2>@ViewData["Title"]</h2>
 
-<h4>Departamento</h4>
+<h4>Vendedores</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
+
+            <!-- A Tag abaixo é usado para exibir as validações que foram feitas na classe "VENDEDORES" -->
+            <div asp-validation-summary="All" class="text-danger"></div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Vendedor.Nome" class="control-label"></label>
